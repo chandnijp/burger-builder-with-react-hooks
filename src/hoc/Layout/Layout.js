@@ -6,16 +6,16 @@ import classes from './Layout.module.css';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 
-const layout = props => {
+const Layout = props => {
     const [sideDrawerIsVisible, setSideDrawerIsVisible] = useState(false);
     
     const sideDrawerClosedHandler = () => {
         setSideDrawerIsVisible(false);
-    }
+    };
 
     const sideDrawerToggleHandler = () => {
         setSideDrawerIsVisible(!sideDrawerIsVisible);
-    }
+    };
 
     return (
         <Auxiliary>
@@ -32,8 +32,8 @@ const layout = props => {
                 {props.children}
             </main>
         </Auxiliary>
-    )
-}
+    );
+};
 
 const mapStateToProps = state => {
     return {
@@ -41,4 +41,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect( mapStateToProps )( layout );
+export default connect( mapStateToProps )( Layout );
